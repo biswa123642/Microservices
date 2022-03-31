@@ -73,7 +73,7 @@ namespace LoginMicroservice.Controllers
 
         [AllowAnonymous]
         [HttpPost(nameof(RegisterNewUser))]
-        public IActionResult RegisterNewUser(RegisterUser data)
+        public IActionResult RegisterNewUser(User data)
         {
             try
             {
@@ -96,7 +96,7 @@ namespace LoginMicroservice.Controllers
 
         [Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
         [HttpPatch(nameof(UpdateUserDetails))]
-        public IActionResult UpdateUserDetails(UpdateUser data)
+        public IActionResult UpdateUserDetails(User data)
         {
             try
             {
@@ -152,7 +152,7 @@ namespace LoginMicroservice.Controllers
         {
             try
             {
-                UpdateUser result = _userService.GetUserProfile(EmailAddress);
+                User result = _userService.GetUserProfile(EmailAddress);
                 return new JsonResult(new {Result = result, Success = true, StatusCode = (int)StatuCode.Success }) { StatusCode = StatusCodes.Status200OK };
             }
             catch(Exception ex)
@@ -213,7 +213,7 @@ namespace LoginMicroservice.Controllers
             {
                 if (_configuration["AdminKey"] == SecretKey)
                 {
-                    List<UserDetail> result = _userService.GetUsersList();
+                    List<User> result = _userService.GetUsersList();
                     return new JsonResult(new { UserList = result, Success = true, StatusCode = (int)StatuCode.Success }) { StatusCode = StatusCodes.Status200OK };
                 } else
                 {
