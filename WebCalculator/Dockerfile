@@ -2,8 +2,6 @@ FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8 AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
-
-FROM mcr.microsoft.com/dotnet/sdk:4.8 AS build
 WORKDIR /src
 COPY ["WebCalculator.csproj", "."]
 RUN dotnet restore "WebCalculator.csproj"
