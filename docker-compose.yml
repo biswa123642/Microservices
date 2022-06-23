@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  webcalculator:
+    image: ${DOCKER_REGISTRY-}webcalculator
+    build:
+      context: .\WebCalculator
+      dockerfile: Dockerfile

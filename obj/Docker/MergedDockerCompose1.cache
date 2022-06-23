@@ -1,0 +1,22 @@
+services:
+  webcalculator:
+    build:
+      args:
+        source: obj/Docker/empty/
+      context: C:\Projects\MicroServices\WebCalculator\WebCalculator
+      dockerfile: Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: WebCalculator
+    container_name: WebCalculator
+    entrypoint: cmd /c "start /B C:\\ServiceMonitor.exe w3svc & C:\\remote_debugger\\x64\\msvsmon.exe
+      /noauth /anyuser /silent /nostatus /noclrwarn /nosecuritywarn /nofirewallwarn
+      /nowowwarn /timeout:2147483646"
+    image: webcalculator:dev
+    ports:
+    - target: 80
+    volumes:
+    - C:\Projects\MicroServices\WebCalculator\WebCalculator:C:\inetpub\wwwroot:rw
+    - C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\Remote
+      Debugger:C:\remote_debugger:ro
+version: '3.4'
