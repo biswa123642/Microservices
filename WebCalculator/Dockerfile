@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/dotnet/framework/sdk:4.8 AS build
 WORKDIR /app
-COPY WebCalculator.csproj .
+COPY WebCalculator/WebCalculator.csproj .
 RUN dotnet restore
 COPY . .
 RUN dotnet publish "WebCalculator/WebCalculator.csproj" -c Release -o /app/publish --no-restore
