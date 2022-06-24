@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/dotnet/framework/sdk:4.8 AS build
 WORKDIR /app
-COPY *.sln .
+COPY WebCalculator.sln .
 COPY WebCalculator/*.csproj ./DockerSample/
 RUN nuget restore
 COPY DockerSample/. ./DockerSample/
