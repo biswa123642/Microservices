@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /app
-COPY WebCalculator/WebCalculator.csproj .
+COPY WebCalculator.csproj .
 RUN dotnet restore
 COPY . .
 RUN dotnet publish "WebCalculator/WebCalculator.csproj" -c Release -o /app/publish --no-restore
@@ -8,4 +8,4 @@ RUN dotnet publish "WebCalculator/WebCalculator.csproj" -c Release -o /app/publi
 FROM mcr.microsoft.com/dotnet/asp.net:5.0
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "WebCalculator/WebCalculator.dll"]
+ENTRYPOINT ["dotnet", "WebCalculator.dll"]
