@@ -1,8 +1,8 @@
 version: '3.4'
 
 services:
-  webcalculator:
-    image: ${DOCKER_REGISTRY-}webcalculator
+  webapplication4:
+    image: ${DOCKER_REGISTRY-}webapplication4
     build:
-      context: .\WebCalculator
+      context: .\WebApplication4
       dockerfile: Dockerfile

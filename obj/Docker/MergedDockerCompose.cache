@@ -1,9 +1,0 @@
-services:
-  webcalculator:
-    build:
-      context: C:\Projects\MicroServices\WebCalculator\WebCalculator
-      dockerfile: Dockerfile
-    image: webcalculator
-    ports:
-    - target: 80
-version: '3.4'

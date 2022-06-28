@@ -3,10 +3,10 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Windows</DockerTargetOS>
-    <ProjectGuid>42730558-ffff-42b0-851b-068c5c05d3b3</ProjectGuid>
+    <ProjectGuid>4f7f72b6-aa8f-4f0c-9e34-57c3b1614db2</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>http://{ServiceIPAddress}</DockerServiceUrl>
-    <DockerServiceName>webcalculator</DockerServiceName>
+    <DockerServiceName>webapplication4</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">
