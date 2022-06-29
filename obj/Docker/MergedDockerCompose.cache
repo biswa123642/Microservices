@@ -1,0 +1,9 @@
+services:
+  webapplication4:
+    build:
+      context: C:\Users\SainathR\Desktop\WebApplication4\WebApplication4\WebApplication4
+      dockerfile: Dockerfile
+    image: webapplication4
+    ports:
+    - target: 80
+version: '3.4'
