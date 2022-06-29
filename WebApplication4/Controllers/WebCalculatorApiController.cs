@@ -22,7 +22,13 @@ namespace WebApplication4.Controllers
         private readonly int CameraExcelColumnCount = 12;
         private readonly int FramerateExcelColumnCount = 15;
 
-
+        [Route("api/webcalculator")]
+        [HttpGet]
+        public string Get()
+        {
+            return "Hello";
+        }
+        
         [Route("api/webcalculator/uploadCamera")]
         [HttpPost]
         public HttpResponseMessage PostCamera()
